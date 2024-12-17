@@ -1,25 +1,30 @@
+import os
+
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
+
+bearer = os.getenv("BEARER")
 
 headers = {
-    "Authorization": "Bearer EAAY7NBJTZClMBO24lOweXAbputP09xuQ9tAtmMY2D17HiALELZCyvrQFBkYJe3SGn8M1DjF83nSe5gfq4e9kUwII6B8eFEhjH0VCGZByE5AsqqgBzA24UxYYNXToMWxUjxSZCdhvXlDnEiPyMqRypqNGFcvQzgOiiuVzTIMlKeZADzy2GVy8SDBLKs8BVPpnZAUrHYHQpG0Lj65XobmtJIDehQdxIZD",
+    "Authorization": f"Bearer {bearer}",
     "Content-Type": "application/json"
 }
 
 json = {
     "messaging_product": "whatsapp",
-    "to": "5586994353290",
+    "to": "5586994661837",
     "type": "template",
     "template": {
-        "name": "testeteste",
-        "language": {"code": "en_US" },
+        "name": "statement_available_1",
+        "language": {"code": "pt_BR" },
         "components": [
             {
                 "type": "body",
                 "parameters": [
-                    {"type": "text", "text": "teste do joao"},
-                    {"type": "text", "text": "quero saber quanto vou gastar para enviar essas msg"},
-                    {"type": "text", "text": "Parâmetro 3"},
-                    {"type": "text", "text": "Parâmetro 4"}
+                    {"type": "text", "text": "João Vitor Melo Fontenele"},
+                    {"type": "text", "text": "4645165464"}
                 ]
             }
         ]
@@ -27,10 +32,11 @@ json = {
 }
 
 response = requests.post(
-    url="https://graph.facebook.com/v21.0/518650314662304/messages",
+    url="https://graph.facebook.com/v21.0/541328609054736/messages",
     headers=headers,
     json=json  # Use 'json' instead of 'data' for sending JSON data
-)
+
+    )
 
 print(response.status_code)
 print(response.text)
