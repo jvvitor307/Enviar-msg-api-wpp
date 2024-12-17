@@ -38,4 +38,15 @@ Configure o numero de WhatsApp ***Ele nao pode estar vinculado a nenhuma conta d
 Com isso voce vai conseguir uma mensagem pela api do whatsapp
 basta pegar gerar o token, colocar na .env e criar um template, pois o padrao de teste nao é possivel de enviar
 
+***Como criar modelos***
 
+Acesse [Whatsapp Manager](https://business.facebook.com/latest/whatsapp_manager/message_templates)
+
+Caso não esteja no numero cadastrado, no canto superior direitro mude para seu numero do Whatsapp Business
+
+- Clique em criar modelo
+
+- Escolha o tipo de mensagem
+- clique em avançar
+- para colcar uma variavel no seu modelo de mensagem add ```{{``` que ele ja autocomplementa 
+- apos configurar sua mensagem clique em enviar para analise e é so esperar
